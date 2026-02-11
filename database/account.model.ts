@@ -5,7 +5,7 @@ export interface IAccount {
   name: string;
   image?: string;
   password?: string;
-  provider: string;
+  provider: string; // e.g., 'github', 'google', 'credentials'
   providerAccountId: string;
 }
 
