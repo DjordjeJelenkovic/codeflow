@@ -4,6 +4,8 @@ import HomeFilter from "@/components/filters/HomeFilter";
 import LocalSearch from "@/components/search/LocalSearch";
 import { Button } from "@/components/ui/button";
 import ROUTES from "@/constants/routes";
+// import handleError from "@/lib/handlers/error";
+// import { NotFoundError, ValidationError } from "@/lib/http-errors";
 
 const questions = [
   {
@@ -46,11 +48,29 @@ const questions = [
   },
 ];
 
+// funkcija za testiranje iz 15.81 lekcije
+// const test = async () => {
+//   try {
+//     // throw new Error("Test error");
+//     // throw new NotFoundError("Home not found");
+//     throw new ValidationError({
+//       title: ["Required"],
+//       tags: ['"JavaScript" is not a valid tag'],
+//     });
+//   } catch (error) {
+//     return handleError(error);
+//   }
+// };
+
 interface SearchParams {
   searchParams: Promise<{ [key: string]: string }>;
 }
 
 const Home = async ({ searchParams }: SearchParams) => {
+  // ovde pozivam onu test funkciju zxa testiranje koju sam napravio iznad
+  // const result = await test();
+  // console.log(result);
+
   const { query = "", filter = "" } = await searchParams;
 
   const filteredQuestions = questions.filter((question) => {
