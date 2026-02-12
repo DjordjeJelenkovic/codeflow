@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import ROUTES from "@/constants/routes";
 // import handleError from "@/lib/handlers/error";
 // import { NotFoundError, ValidationError } from "@/lib/http-errors";
+// import dbConnect from "@/lib/mongosse";
 
 const questions = [
   {
@@ -57,6 +58,7 @@ const questions = [
 //       title: ["Required"],
 //       tags: ['"JavaScript" is not a valid tag'],
 //     });
+//     // await dbConnect();
 //   } catch (error) {
 //     return handleError(error);
 //   }
@@ -70,6 +72,7 @@ const Home = async ({ searchParams }: SearchParams) => {
   // ovde pozivam onu test funkciju zxa testiranje koju sam napravio iznad
   // const result = await test();
   // console.log(result);
+  // await test();
 
   const { query = "", filter = "" } = await searchParams;
 
