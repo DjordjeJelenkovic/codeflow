@@ -1,6 +1,5 @@
 import mongoose from "mongoose";
 import slugify from "slugify";
-
 import Account from "@/database/account.model";
 import User from "@/database/user.model";
 import handleError from "@/lib/handlers/error";
