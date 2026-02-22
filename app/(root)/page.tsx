@@ -9,6 +9,7 @@ import ROUTES from "@/constants/routes";
 // import dbConnect from "@/lib/mongosse";
 import { api } from "@/lib/api";
 import handleError from "@/lib/handlers/error";
+import { auth } from "@/auth";
 
 const questions = [
   {
@@ -76,9 +77,11 @@ const Home = async ({ searchParams }: SearchParams) => {
   // const result = await test();
   // console.log(result);
   // await test();
-  const users = await test();
+  // const users = await test();
+  const session = await auth();
 
-  console.log(users);
+  // console.log(users);
+  console.log("Session: ", session);
 
   const { query = "", filter = "" } = await searchParams;
 
