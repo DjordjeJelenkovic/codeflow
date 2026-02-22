@@ -7,6 +7,7 @@ import handleError from "@/lib/handlers/error";
 import { ValidationError } from "@/lib/http-errors";
 import dbConnect from "@/lib/mongoose";
 import { SignInWithOAuthSchema } from "@/lib/validations";
+import { NextResponse } from "next/server";
 
 export async function POST(request: Request) {
   const { provider, providerAccountId, user } = await request.json();
@@ -58,7 +59,7 @@ export async function POST(request: Request) {
       await Account.create(
         [
           {
-            userid: existingUser._id,
+            userId: existingUser._id,
             name,
             image,
             provider,
@@ -70,6 +71,8 @@ export async function POST(request: Request) {
     }
 
     await session.commitTransaction();
+
+    return NextResponse.json({ success: true });
   } catch (error: unknown) {
     await session.abortTransaction();
     return handleError(error, "api") as APIErrorResponse;
