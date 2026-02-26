@@ -1,6 +1,6 @@
 "use client";
 
-import { zodResolver } from "@hookform/resolvers/zod";
+import { standardSchemaResolver } from "@hookform/resolvers/standard-schema";
 import { useRouter } from "next/navigation";
 import { DefaultValues, FieldValues, Path, SubmitHandler, useForm } from "react-hook-form";
 import { z, ZodType } from "zod";
@@ -23,7 +23,7 @@ const AuthForm = <T extends FieldValues>({ schema, defaultValues, formType, onSu
   const router = useRouter();
 
   const form = useForm<z.infer<typeof schema>>({
-    resolver: zodResolver(schema),
+    resolver: standardSchemaResolver(schema),
     defaultValues: defaultValues as DefaultValues<T>,
   });
 
@@ -39,17 +39,17 @@ const AuthForm = <T extends FieldValues>({ schema, defaultValues, formType, onSu
     const result = (await onSubmit(data)) as ActionResponse;
 
     if (result?.success) {
-      toast({
-        title: "Success",
+      toast(formType === "SIGN_IN" ? "Signed in successfully" : "Signed up successfully", {
+        // title: "Success",
         description: formType === "SIGN_IN" ? "Signed in successfully" : "Signed up successfully",
       });
 
       router.push(ROUTES.HOME);
     } else {
-      toast({
-        title: `Error ${result?.status}`,
+      toast(`Error ${result?.error?.message}`, {
+        // title: `Error ${result?.status}`,
         description: result?.error?.message,
-        variant: "destructive",
+        // variant: "destructive",
       });
     }
   };
