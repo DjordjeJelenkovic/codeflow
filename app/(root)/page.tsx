@@ -4,7 +4,7 @@ import HomeFilter from "@/components/filters/HomeFilter";
 import LocalSearch from "@/components/search/LocalSearch";
 import { Button } from "@/components/ui/button";
 import ROUTES from "@/constants/routes";
-import { auth } from "@/auth";
+// import { auth } from "@/auth";
 
 const questions = [
   {
@@ -52,9 +52,10 @@ interface SearchParams {
 }
 
 const Home = async ({ searchParams }: SearchParams) => {
-  const session = await auth();
+  // u 19.107 obrisao pri kraju
+  // const session = await auth();
 
-  console.log("Session: ", session);
+  // console.log("Session: ", session);
 
   const { query = "", filter = "" } = await searchParams;
 
