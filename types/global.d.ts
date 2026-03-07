@@ -12,7 +12,8 @@ interface Author {
 interface Question {
   _id: string;
   title: string;
-  content: string;
+  // morao sam da dodam ? jer nije htelo da prodje deploy
+  content?: string;
   tags: Tag[];
   author: Author;
   upvotes: number;
