@@ -92,7 +92,7 @@ const QuestionForm = ({ question, isEdit = false }: Params) => {
             // title: "Success",
             description: "Question updated successfully.",
           });
-
+          // @ts-expect-error Baca ovde gresku na result.dada._id pa cu da se vratim posle
           if (result.data) router.push(ROUTES.QUESTION(result.data._id));
         } else {
           toast(`Error ${result.status}!`, {
