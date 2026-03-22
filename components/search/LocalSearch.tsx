@@ -12,11 +12,12 @@ interface Props {
   route: string;
   imgSrc: string;
   placeholder: string;
-  iconPosition: "left" | "right";
+  iconPosition?: "left" | "right";
   otherClasses?: string;
 }
+// ovaj fajl je updatovan za next 16 i to se vidi u 12.55 lekciji ispod klipa je naglasio ali evo sada u 22.115 moram da prilagodim i stavim opciono? za iconPosition jer baca gresku u tags pags gde ga ne trazi
 
-const LocalSearch = ({ route, imgSrc, placeholder, iconPosition, otherClasses }: Props) => {
+const LocalSearch = ({ route, imgSrc, placeholder, iconPosition = "left", otherClasses }: Props) => {
   const pathname = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();
