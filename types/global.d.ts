@@ -13,7 +13,8 @@ interface Question {
   _id: string;
   title: string;
   // morao sam da dodam ? jer nije htelo da prodje deploy
-  content?: string;
+  // ali sam u 23.120 morao da ga obrisem jer je bacalo novi bug da undfined ne moze da bude string, pa kad sam obrisao stari bug ga nema
+  content: string;
   tags: Tag[];
   author: Author;
   upvotes: number;
