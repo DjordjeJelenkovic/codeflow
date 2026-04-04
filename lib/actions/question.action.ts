@@ -15,7 +15,7 @@ import {
   PaginatedSearchParamsSchema,
   IncrementViewsSchema,
 } from "../validations";
-import { revalidatePath } from "next/cache";
+// import { revalidatePath } from "next/cache";
 import ROUTES from "@/constants/routes";
 
 export async function createQuestion(params: CreateQuestionParams): Promise<ActionResponse<Question>> {
@@ -284,7 +284,7 @@ export async function incrementViews(params: IncrementViewsParams): Promise<Acti
 
     await question.save();
 
-    revalidatePath(ROUTES.QUESTION(questionId));
+    // revalidatePath(ROUTES.QUESTION(questionId));
 
     return {
       success: true,
