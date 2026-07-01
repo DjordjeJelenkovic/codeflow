@@ -13,7 +13,7 @@ import ROUTES from "@/constants/routes";
 import { toast } from "sonner";
 
 interface AuthFormProps<T extends FieldValues> {
-  schema: ZodType<T>;
+  schema: ZodType<T, T>;
   defaultValues: T;
   onSubmit: (data: T) => Promise<ActionResponse>;
   formType: "SIGN_IN" | "SIGN_UP";
