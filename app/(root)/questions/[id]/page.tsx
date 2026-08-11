@@ -68,7 +68,7 @@ const QuestionDetails = async ({ params }: RouteParams) => {
                 targetId={question._id}
                 hasVotedPromise={hasVotedPromise}
               />
-            </Suspense>{" "}
+            </Suspense>
           </div>
         </div>
 
