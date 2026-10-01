@@ -50,6 +50,9 @@ importers:
       cm6-theme-basic-dark:
         specifier: ^0.2.0
         version: 0.2.0(@codemirror/language@6.12.1)(@codemirror/state@6.5.4)(@codemirror/view@6.39.12)(@lezer/highlight@1.2.3)
+      cn:
+        specifier: ^0.4.0
+        version: 0.4.0
       lucide-react:
         specifier: ^0.560.0
         version: 0.560.0(react@19.2.0)
@@ -2126,6 +2129,11 @@ packages:
       '@codemirror/state': ^6.0.0
       '@codemirror/view': ^6.0.0
       '@lezer/highlight': ^1.0.0
+
+  cn@0.4.0:
+    resolution: {integrity: sha512-qOAeUhPwPzBxx6jaeQdo646XIKliKHc2j1ZF7Ngb1o0pJZKH5gq8FkA0aVdUdPFUDXNXyUCXpCtoJISo6dhizg==}
+    engines: {node: '>=20'}
+    hasBin: true
 
   codemirror@6.0.2:
     resolution: {integrity: sha512-VhydHotNW5w1UGK0Qj96BwSk/Zqbp9WbnyK2W/eVMv4QyF41INRGpjUhFJY7/uDNuudSc33a/PKr4iDqRduvHw==}
@@ -6482,6 +6490,8 @@ snapshots:
       '@codemirror/state': 6.5.4
       '@codemirror/view': 6.39.12
       '@lezer/highlight': 1.2.3
+
+  cn@0.4.0: {}
 
   codemirror@6.0.2:
     dependencies:
