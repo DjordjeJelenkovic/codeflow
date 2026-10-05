@@ -45,6 +45,7 @@ const Home = async ({ searchParams }: SearchParams) => {
         <CommonFilter
           filters={HomePageFilters}
           otherClasses="min-h-[56px] sm:min-w-[170px]"
+          // 29.146 u ovoj lekciji njemu u containerClasses ispod stoji hidden kao prvi atribut ali meni se sa njim ne vidi filter pa sam ga obrisao i ne znam kako njemu radi, a i select komponenta nam se razlikuje i imao sam problem za pnpm kada sam hteo da instaliram schacn select komponentu, a sada kada sam ubacio fiulter na ostala mesta u app u sledecem klipu svuda radi kada ovde vratim hidden jedino u home komponenti ne
           containerClasses=" max-md:flex"
         />
       </section>
